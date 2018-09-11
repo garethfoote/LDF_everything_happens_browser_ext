@@ -47,7 +47,6 @@ const getAll = (activeDomain) => {
 
 }
 
-
 const domainFrom = (url) => {
   var result
   var match
@@ -60,8 +59,6 @@ const domainFrom = (url) => {
   return result
 }
 
-
-
 chrome.runtime.onMessageExternal.addListener(
   function(request, sender, sendResponse) {
     const domain = domainFrom(sender.url)
@@ -70,7 +67,7 @@ chrome.runtime.onMessageExternal.addListener(
       
       getAll(domain)
         .then((tabs)=>{
-          if(tabs.length > 4){
+          if(tabs.length > 3){
             // console.log("closing one", tabs)
             return closeInactive(tabs, sender.tab.id)
             sendResponse('success')
