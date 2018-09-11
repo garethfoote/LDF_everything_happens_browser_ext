@@ -1,0 +1,20 @@
+{
+  "name": "User-Agent Exhibit LDF 2018",
+  "version": "1.0",
+  "description": "Maintain x number of windows only",
+  "permissions": [
+    "*://*.example.com/*",
+    "http://freddystarratemyhamsters.com/*",
+    "storage",
+    "declarativeContent",
+    "tabs"
+  ],
+  "externally_connectable": {
+    "matches": ["*://*.example.com/*", "http://localhost:3000/*", "http://freddystarratemyhamsters.com/*"]
+  },
+  "background": {
+    "scripts": ["browser-polyfill.min.js", "background.js"],
+    "persistent": false
+  },
+  "manifest_version": 2
+}
